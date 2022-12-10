@@ -1,6 +1,7 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
+        maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/'}
         google()
         mavenCentral()
     }
@@ -8,9 +9,18 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        maven{ url 'https://maven.aliyun.com/nexus/content/groups/public/'}
         google()
         mavenCentral()
     }
 }
 rootProject.name = "ZhiSo"
 include ':app'
+
+/*
+include ':MediaBoxPlugin'
+project(':MediaBoxPlugin').projectDir = new File(rootDir, 'submodules/MediaBoxPlugin/')
+
+*/
+include ':MediaBoxPlugin'
+project(':MediaBoxPlugin').projectDir = new File(rootDir, 'submodules/MediaBoxPlugin/pluginApi')
